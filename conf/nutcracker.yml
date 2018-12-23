@@ -1,0 +1,19 @@
+root:
+  #on écoute sur toutes les IPs du serveur
+  listen: 0.0.0.0:11211
+
+  #on définit le type du hash (celui-ci est recommandé car il est compatible libmemcached)
+  hash: crc32
+
+  #la distrib par défaut
+  distribution: ketama
+
+  #Contrôle si twemproxy devrait être preconnecté à tous les serveurs du pool au démarrage du processus.
+  preconnect: true
+
+  #Contrôle si le serveur doit être éjecté temporairement quand il échoue consécutivement.
+  auto_eject_hosts: false
+
+  #Pool de serveurs avec son poids
+  servers:
+  - 127.0.0.1:22122:1
